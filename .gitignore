@@ -1,0 +1,31 @@
+# === GLOBAL ===
+node_modules/
+dist/
+build/
+.env
+.env.local
+.env.*.local
+*.log
+*.cache
+.vscode/
+.DS_Store
+.idea/
+
+# === NESTJS BACKEND (movie-booker) ===
+movie-booker/node_modules/
+movie-booker/dist/
+movie-booker/.env
+movie-booker/coverage/
+movie-booker/*.log
+
+# === FRONTEND REACT + VITE (movie-booker-front) ===
+movie-booker-front/node_modules/
+movie-booker-front/dist/
+movie-booker-front/.env
+movie-booker-front/coverage/
+movie-booker-front/*.log
+
+# === EXO folder (si besoin) ===
+exo/node_modules/
+exo/dist/
+exo/.env
