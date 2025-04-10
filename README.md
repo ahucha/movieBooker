@@ -1,66 +1,52 @@
-# 🎬 Movie Booker – API NestJS
+# 🎬 MoviieBooker
 
-API pour gérer l'inscription, la connexion, et la réservation de films avec vérification de conflits horaires.
-
----
-
-## 🛠️ Stack
-
-- NestJS
-- PostgreSQL + TypeORM
-- JWT Auth
-- TMDB API
-- Swagger
+Une application web complète permettant de :
+- S'inscrire et se connecter
+- Consulter une liste de films récupérés via **TMDB**
+- Réserver un film à une date donnée
+- Visualiser et supprimer ses réservations
 
 ---
 
-## ⚙️ Installation
+## 🔗 Accès à l'application
 
-```bash
-npm install
-```
-
-Créer un fichier `.env` à la racine (voir `.env.example` fourni) :
-
-```env
-cp .env.example .env
-```
-
-Lancer l'app :
-
-```bash
-npm run start:dev
-```
+- 🖥️ Frontend : [https://movie-booker-front.onrender.com](https://movie-booker-front.onrender.com)
+- 🛠️ Backend API (NestJS) : [https://moviebooker-zt7n.onrender.com](https://moviebooker-zt7n.onrender.com)
 
 ---
 
-## 📚 Endpoints
+## 📌 Fonctionnalités
 
-Swagger : [http://localhost:3000/api](http://localhost:3000/api)
+### 🔐 Authentification
+- Création de compte avec email + mot de passe
+- Connexion et gestion du token JWT
+- Protection des routes avec authentification
 
-### Auth
-- `POST /auth/register`
-- `POST /auth/login`
+### 🎥 Films
+- Liste paginée de films (API TMDB)
+- Affichage des détails de chaque film
+- Système de réservation avec date personnalisée
 
-### Reservations (auth requise)
-- `POST /reservations`
-- `GET /reservations`
-- `DELETE /reservations/:id`
-
-⏱️ Règle : Un film dure 2h. Pas de chevauchement entre deux réservations.
+### 📅 Réservations
+- Réservation possible avec règle : **minimum 2h entre chaque film**
+- Consultation des réservations
+- Suppression possible
 
 ---
 
-## ☁️ Déploiement (Render)
+## 🧪 Tester l’API (Swagger)
 
-Tu peux définir tes variables d'environnement directement dans Render :
+📚 Documentation Swagger intégrée  
+→ Accès : [https://moviebooker-zt7n.onrender.com/api](https://moviebooker-zt7n.onrender.com/api)
 
-- `POSTGRES_*`
-- `JWT_SECRET`
-- `TMDB_API_KEY`
+---
 
-Et exposer ton API à l'adresse :
+## 🛠️ Tech Stack
 
-```txt
-https://<ton-projet>.onrender.com/api
-```
+- **Frontend** : React + Vite + TailwindCSS
+- **Backend** : NestJS + PostgreSQL + TypeORM
+- **Authentification** : JWT
+- **API Films** : [TMDB](https://www.themoviedb.org/)
+- **Déploiement** : Render
+
+---
