@@ -9,7 +9,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 
   app.enableCors({
-    origin: 'http://localhost:5173',
+    origin: 'https://movie-booker-front.onrender.com',
     credentials: true,
   });
 
@@ -17,7 +17,7 @@ async function bootstrap() {
     .setTitle('MoviieBooker API')
     .setDescription('API de réservation de films avec authentification')
     .setVersion('1.0')
-    .addBearerAuth() // permet d’ajouter un token via Swagger UI
+    .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

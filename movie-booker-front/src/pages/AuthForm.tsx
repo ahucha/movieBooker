@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://moviebooker-zt7n.onrender.com';
 
 export default function AuthForm() {
   const [isLogin, setIsLogin] = useState(true);
