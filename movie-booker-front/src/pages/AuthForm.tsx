@@ -6,7 +6,7 @@ const API_URL = 'https://moviebooker-zt7n.onrender.com';
 
 export default function AuthForm() {
   const [isLogin, setIsLogin] = useState(true);
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
@@ -14,7 +14,7 @@ export default function AuthForm() {
     e.preventDefault();
     try {
       if (isLogin) {
-        const res = await axios.post(`${API_URL}/auth/login`, { username, password });
+        const res = await axios.post(`${API_URL}/auth/login`, { email, password });
         if (res.data.access_token) {
           localStorage.setItem('token', res.data.access_token);
           navigate('/movies');
@@ -22,7 +22,7 @@ export default function AuthForm() {
           alert("Connexion réussie, mais aucun token reçu.");
         }
       } else {
-        await axios.post(`${API_URL}/auth/register`, { username, password });
+        await axios.post(`${API_URL}/auth/register`, { email, password });
         alert("Inscription réussie. Vous pouvez maintenant vous connecter.");
         setIsLogin(true);
       }
@@ -38,9 +38,9 @@ export default function AuthForm() {
         <div className="mb-4">
           <input
             type="text"
-            placeholder="Nom d'utilisateur"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
             className="w-full px-4 py-2 border border-gray-300 rounded"
           />
